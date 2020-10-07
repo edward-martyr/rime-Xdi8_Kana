@@ -1,0 +1,40 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: Xdi8-Kana
+  name: "シディン゠カナ"
+  version: "2020.10.07"
+  author:
+    - 埃爾德路 ‹edwardmartyr@outlook.com›
+
+switches:
+  - name: full_shape
+    reset: 0
+  - name: ascii_punct
+    reset: 1
+
+engine:
+  processors:
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  delimiter: " "
+
+translator:
+  dictionary: Xdi8-Kana
+  spelling_hints: 5
+  enable_sentence: false
+
+key_binder:
+  import_preset: default
