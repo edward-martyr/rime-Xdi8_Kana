@@ -4,28 +4,35 @@
 schema:
   schema_id: Xdi8-Kana
   name: "シディン゠カナ"
-  version: "2020.10.07"
+  version: "2020.10.08"
   author:
     - 埃爾德路 ‹edwardmartyr@outlook.com›
 
 switches:
   - name: full_shape
-    reset: 0
-  - name: ascii_punct
-    reset: 1
+    states: [ 半角, 全角 ]
+  - name: ascii_mode
+    states: [ 中文, 西文 ]
 
 engine:
   processors:
     - key_binder
+    - recognizer
     - speller
     - selector
     - navigator
     - express_editor
+    - punctuator
   segmentors:
+    - ascii_segmentor
+    - matcher
     - abc_segmentor
     - fallback_segmentor
+    - punct_segmentor
   translators:
+    - echo_translator
     - table_translator
+    - punct_translator
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -38,3 +45,20 @@ translator:
 
 key_binder:
   import_preset: default
+
+recognizer:
+  patterns:
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+
+punctuator:
+  import_preset: symbols
+  full_shape: 
+    ',' : { commit: '、' }
+    ' ' : { commit: '　' }
+    '=' : [ '゠' ]
+    '-' : "ー"
+  half_shape: 
+    ',' : { commit: '､' }
+    ' ' : { commit: ' ' }
+    '=' : [ '⹀' ]
+    '-' : "ｰ"

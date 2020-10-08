@@ -3,7 +3,7 @@
 
 ---
 name: Xdi8-Kana
-version: "2020.10.07"
+version: "2020.10.08"
 use_preset_vocabulary: false
 ...
 
@@ -534,3 +534,36 @@ use_preset_vocabulary: false
 ツッォァン	t1sT
 ヅッォァン	d1sT
 ル゚ォァン	l1sT
+エィ	V
+ベィ	bV
+ペィ	pV
+メィ	mV
+ヹィ	wV
+ジェィ	jV
+チェィ	qV
+シェィ	xV
+ヰェィ	yV
+ケ゚ィ	NV
+ゼィ	zV
+ツェィ	DV
+セィ	sV
+レィ	rV
+ヌ゚ェィ	HV
+ディ	dV
+ティ	tV
+ネ゚ィ	nV
+ネﾞィ	lV
+ゲィ	gV
+ケィ	kV
+ヘィ	hV
+エ゙ィ	4V
+ク゚ェィ	5V
+ネィ	vV
+ドゥェィ	FV
+トゥェィ	7V
+グェィ	BV
+クェィ	cV
+フッェィ	fV
+ツッェィ	t1sV
+ヅッェィ	d1sV
+ル゚ェィ	l1sV
